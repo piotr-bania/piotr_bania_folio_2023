@@ -1,17 +1,31 @@
 @import '/styles/globals';
 
-.canvas_homepage {
-    width: 100vw;
-    height: 100vh;
-    border: 15px solid #ffffff;
-    box-shadow: inset 0 0 0 2px #000000;
-}
+.container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
 
-.frames_homepage {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    border: 1px solid hotpink;
+    .view1, .view_1 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 5px solid hotpink;
+    }
+
+    .view2 {
+        position: absolute;
+        top: 2em;
+        right: 2em;
+        width: calc(250px - 2em);
+        height: calc(250px - 2em);
+        box-shadow: inset 0 0 0 5px hotpink;
+    }
+
+    .canvas {
+        pointer-events: none;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 100vh;
+    }
 }

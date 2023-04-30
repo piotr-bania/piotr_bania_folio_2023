@@ -39,13 +39,10 @@ const Homepage = () => {
 
     return (
         <>
-            {/* <mesh>
+            <mesh receiveShadow >
                 <boxGeometry args={[1, 1, 1]} />
-            </mesh> */}
-
-            <Html wrapperClass='frames_homepage'>
-                Test
-            </Html>
+                <meshBasicMaterial color={'#62F5E6'} />
+            </mesh>
         </> 
     )
 }

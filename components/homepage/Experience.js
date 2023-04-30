@@ -1,32 +1,39 @@
-import React, { Suspense } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
+import React, { useRef } from 'react'
+import { Canvas } from '@react-three/fiber'
 import { PerspectiveCamera, Environment, View } from '@react-three/drei'
 import Homepage from './Homepage'
 import Controls from '../Controls'
 
 const Experience = () => {
 
+    const ref = useRef()
+    const view1 = useRef()
+    const view2 = useRef()
+
     return (
-        <div className='canvas_homepage' >
-            <Canvas
-                shadows
-                
-            >
-                <PerspectiveCamera makeDefault position={[0, 0, 25]} fov={25} />
+        <>
+            <div ref={ref} className='container' >
+                <div className="view1" ref={view1} />
+                <div className="view2" ref={view2} />
 
-                <directionalLight position={[1, 1, 0.25]} intensity={1} color={'#FFFFFF'} />
-                <directionalLight position={[-1, -1, -0.75]} intensity={0.5} color={'#7171EE'} />
-                <directionalLight position={[-1, 1, -0.5]} intensity={0.5} color={'#FFFFFF'} />
-                <ambientLight intensity={0.05} />
-                {/* <Environment files='./environments/brown_photostudio_02_1k.hdr' /> */}
+                <Canvas eventSource={ref} className='canvas' >
 
-                <Suspense fallback={null}>
-                    <Homepage />
-                </Suspense>
+                    <View index={1} track={view1} className='view_1' >
+                        <color attach="background" args={['#f0f0f0']} />
+                        <PerspectiveCamera makeDefault position={[0, 0, 25]} fov={25} />
+                        <Homepage />
+                    </View>
 
-                <Controls />
-            </Canvas>
-        </div>
+                    <View index={2} track={view2} className='view_2' >
+                        <color attach="background" args={['#ffffff']} />
+                        <PerspectiveCamera makeDefault position={[0, 0, 25]} fov={25} />
+                        <Homepage />
+                    </View>
+                    
+                    <Controls />
+                </Canvas>
+            </div>
+        </>
     )
 }
 
