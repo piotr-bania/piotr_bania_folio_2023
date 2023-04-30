@@ -1,0 +1,51 @@
+/* ------------------------------ Fonts import ------------------------------ */
+@import url("https://use.typekit.net/wjp2kcg.css");
+
+@font-face {
+    font-family: "arkitech";
+    src: url(/public/fonts/arkitech/arkitech_light.ttf);
+}
+
+/* ------------------------------ Variables ------------------------------ */
+$purple: #7161F5;
+$green: #61F570;
+$red: #F57061;
+$grey: #ABABAB;
+$darker: #040117;
+$dark: #07032E;
+$off_white: #F5F4FE;
+$white: #FFFFFF;
+
+// ---------- Fonts ----------
+$header_font: 'ethnocentric',
+sans-serif;
+$text_font: 'kallisto',
+sans-serif;
+
+// ---------- Fluid fonts ----------
+$paragraph: clamp(0.88rem, 0.23vw + 0.82rem, 1rem);
+$header_4: clamp(1.05rem, 0.65vw + 0.89rem, 1.41rem);
+$header_3: clamp(1.26rem, 1.32vw + 0.93rem, 1.99rem);
+$header_2: clamp(1.51rem, 2.35vw + 0.93rem, 2.8rem);
+$header_1: clamp(1.81rem, 3.89vw + 0.84rem, 3.95rem);
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    list-style-type: none;
+}
+
+body {
+    background: linear-gradient(90deg, $darker, $dark);
+    color: $off_white;
+    font-family: $text_font;
+    font-size: $paragraph;
+    margin: auto;
+    user-select: none;
+    overflow: hidden;
+}

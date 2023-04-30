@@ -10,8 +10,21 @@
   },
   "dependencies": {
     "@next/font": "13.3.2",
+    "@react-three/drei": "^9.66.1",
+    "@react-three/fiber": "^8.13.0",
+    "@react-three/postprocessing": "^2.9.1",
+    "@react-three/rapier": "^0.15.1",
+    "framer-motion": "^10.12.4",
+    "gsap": "^3.11.5",
+    "leva": "^0.9.34",
     "next": "13.3.2",
+    "raw-loader": "^4.0.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-three-fiber": "^6.0.13",
+    "three": "^0.151.3"
+  },
+  "devDependencies": {
+    "sass": "^1.62.1"
   }
 }
