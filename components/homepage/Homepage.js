@@ -35,15 +35,16 @@ const Homepage = () => {
         waterMaterial.uniforms.uTime.value += delta
     })
 
-    // const {nodes, materials} = useLoader(GLTFLoader, '/models/scene.glb')
-
+    const {scene, nodes, materials} = useLoader(GLTFLoader, '/models/basic_scene.glb')
+    console.log(nodes)
     return (
-        <>
-            <mesh receiveShadow >
-                <boxGeometry args={[1, 1, 1]} />
-                <meshBasicMaterial color={'#62F5E6'} />
-            </mesh>
-        </> 
+        <group
+            position={[0, -1, 0]}
+            >
+                <mesh material={waterMaterial}>
+                    <sphereGeometry args={[5, 128, 128]} />
+                </mesh>
+        </group>
     )
 }
 
