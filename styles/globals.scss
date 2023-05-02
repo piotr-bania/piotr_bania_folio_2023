@@ -98,7 +98,6 @@ p {
 // ------------------- Frames -------------------
 .inner {
     border: 12px solid $white;
-    position: relative;
 
     &::after {
         content: '';
@@ -106,22 +105,11 @@ p {
         display: block;
         width: 100%;
         height: 100%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
     }
 }
 
 .outer {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    border: 1px solid $dark;
 }
 
 // ------------------- Captions -------------------
@@ -133,8 +121,7 @@ p {
     background: $white;
     color: $dark;
     border: 1px solid $dark;
-    // border-top: none;
-    box-shadow: 0 0 10px #00000025;
+    // box-shadow: 0 0 25px #00000050;
 }
 
 .caption_1,

@@ -16,7 +16,7 @@ const Experience = () => {
             <div className='scene_1'>
                 <Canvas className='canvas'>
                     <Suspense fallback={null}>
-                        <color attach="background" args={['#EBE8FE']} />
+                        <color attach="background" args={['#F9F9F9']} />
                         
                         <PerspectiveCamera makeDefault position={[0, 0, 35]} fov={35} />
 
@@ -36,7 +36,7 @@ const Experience = () => {
             <div className='scene_2'>
                 <Canvas className='canvas'>
                     <Suspense fallback={null}>
-                        <color attach="background" args={['#D6D2FC']} />
+                        <color attach="background" args={['#F3F3F3']} />
                         
                         <PerspectiveCamera makeDefault position={[0, 0, 45]} fov={45} />
 
@@ -56,7 +56,7 @@ const Experience = () => {
             <div className='scene_3'>
                 <Canvas className='canvas'>
                     <Suspense fallback={null}>
-                        <color attach="background" args={['#C2BBFB']} />
+                        <color attach="background" args={['#EDEDED']} />
                         
                         <PerspectiveCamera makeDefault position={[0, 0, 55]} fov={55} />
 

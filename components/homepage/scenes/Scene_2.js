@@ -42,7 +42,7 @@ const Scene_2 = () => {
     return (
         <mesh ref={cubeRef}>
             <boxGeometry args={[10, 10, 10]} />
-            <meshStandardMaterial color='green' />
+            <meshStandardMaterial color='#555555' />
         </mesh>
     )
 }
