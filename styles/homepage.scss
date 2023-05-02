@@ -1,0 +1,132 @@
+@import '/styles/globals';
+
+// ------------------- Captions -------------------
+.caption_1 {
+    top: 11px;
+    left: 7%;
+}
+
+.caption_2 {
+    bottom: 11px;
+    right: 11px;
+}
+
+.caption_3 {
+    top: 11px;
+    right: 11px;
+}
+
+// ------------------- Desktop -------------------
+@media only screen and (min-width: 1200px) {
+    .scene_1 {
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+    }
+
+    .caption_1 {
+        width: 25%;
+    }
+
+    .scene_2 {
+        top: 5%;
+        right: 2%;
+        width: 35%;
+        height: 55%;
+    }
+
+    .caption_2 {
+        width: 90%;
+    }
+
+    .scene_3 {
+        bottom: 3%;
+        right: 5%;
+        width: 50%;
+        height: 35%;
+    }
+
+    .caption_3 {
+        width: 60%;
+    }
+
+    .outer {
+        border: 1px solid $dark;
+    }
+}
+
+// ------------------- iPad -------------------
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+    .scene_1 {
+        top: 0%;
+        left: 0%;
+        width: calc(60% + 11px);
+        height: 100%;
+    }
+
+    .caption_1 {
+        left: 10%;
+        width: 35%;
+    }
+
+    .scene_2 {
+        top: 0%;
+        right: 0%;
+        width: 40%;
+        height: 55%;
+    }
+
+    .caption_2 {
+        width: 85%;
+    }
+
+    .scene_3 {
+        bottom: 0%;
+        right: 0%;
+        width: 40%;
+        height: calc(45% + 11px);;
+    }
+
+    .caption_3 {
+        width: 55%;
+    }
+}
+
+// ------------------- Mobile -------------------
+@media only screen and (max-width: 767px) {
+    .scene_1 {
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: calc(45% + 11px);
+    }
+
+    .caption_1 {
+        left: 20%;
+        width: calc(80% - 11px);
+    }
+
+    .scene_2 {
+        top: 45%;
+        right: 0%;
+        width: 100%;
+        height: calc(30% + 11px);
+    }
+
+    .caption_2 {
+        left: 11px;
+        width: 85%;
+    }
+
+    .scene_3 {
+        bottom: 0%;
+        right: 0%;
+        width: 100%;
+        height: 25%;
+    }
+
+    .caption_3 {
+        width: 55%;
+    }
+}
