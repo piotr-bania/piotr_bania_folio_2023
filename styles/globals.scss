@@ -12,7 +12,7 @@ $green: #61F570;
 $red: #F57061;
 $grey: #ABABAB;
 $darker: #040117;
-$dark: #07032E;
+$dark: #000000;
 $off_white: #F5F4FE;
 $white: #FFFFFF;
 
@@ -23,12 +23,11 @@ $text_font: 'komika',
 sans-serif;
 
 // ---------- Fluid fonts ----------
-$paragraph: clamp(0.88rem, 0.23vw + 0.82rem, 1rem);
-$header_4: clamp(1.05rem, 0.65vw + 0.89rem, 1.41rem);
-$header_3: clamp(1.26rem, 1.32vw + 0.93rem, 1.99rem);
-$header_2: clamp(1.51rem, 2.35vw + 0.93rem, 2.8rem);
-$header_1: clamp(1.81rem, 3.89vw + 0.84rem, 3.95rem);
-
+$paragraph: clamp(0.63rem, 0.91vw + 0.4rem, 1.13rem);
+$header_4: clamp(0.7rem, 1.02vw + 0.45rem, 1.27rem);
+$header_3: clamp(0.79rem, 1.15vw + 0.5rem, 1.42rem);
+$header_2: clamp(0.89rem, 1.29vw + 0.57rem, 1.6rem);
+$header_1: clamp(1rem, 1.46vw + 0.64rem, 1.8rem);
 * {
     box-sizing: border-box;
 }
@@ -55,4 +54,99 @@ h1, h2, h3, h4 {
     font-weight: 400;
     margin: 0;
     line-height: 1;
+}
+
+h1 {
+    font-size: $header_1;
+}
+
+h2 {
+    font-size: $header_2;
+}
+
+h3 {
+    font-size: $header_3;
+}
+
+h4 {
+    font-size: $header_4;
+}
+
+p {
+    font-family: $header_font;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1;
+    color: $dark;
+}
+
+// ------------------- Canvas -------------------
+.canvas {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+// ------------------- Scenes -------------------
+.scene_1,
+.scene_2,
+.scene_3 {
+    position: fixed;
+}
+
+.scene_1 {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+// ------------------- Frames -------------------
+.inner {
+    border: 12px solid $white;
+    position: relative;
+
+    &::after {
+        content: '';
+        border: 1px solid $dark;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.outer {
+    content: '';
+    border: 1px solid $dark;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// ------------------- Captions -------------------
+.caption {
+    position: relative;
+    height: auto;
+    padding: 10px 20px;
+    text-align: center;
+    background: $white;
+    color: $dark;
+    border: 1px solid $dark;
+    // border-top: none;
+    // box-shadow: 0 0 10px #00000025;
+}
+
+.caption_1,
+.caption_2,
+.caption_3 {
+    position: absolute;
 }
