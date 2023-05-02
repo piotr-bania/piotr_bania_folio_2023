@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { PerspectiveCamera, Environment, View, Html } from '@react-three/drei'
+import { PerspectiveCamera, Environment, View, Html, OrbitControls } from '@react-three/drei'
 import Homepage from './Homepage'
-import Controls from '../Controls'
+import Caption_1 from './scene_1/Caption_1'
 
 const Border = () => {
     const borderStyle = {
@@ -40,6 +40,7 @@ const Experience = () => {
                         <PerspectiveCamera makeDefault position={[0, 0, 35]} fov={35} />
                         <pointLight castShadow position={[10, 10, 10]} />
                         <Homepage />
+                        <Caption_1 />
                         <Html fullscreen className='inner'/>
                         <Html fullscreen className='outer'/>
                     </View>
@@ -55,17 +56,28 @@ const Experience = () => {
                     </View>
 
                     {/* ----- Scene 3 ----- */}
-                    <View index={3} track={view3}>
+                    {/* <View index={3} track={view3}>
                         <color attach="background" args={['#629FF5']} />
                         <PerspectiveCamera makeDefault position={[0, 0, 35]} fov={35} />
                         <pointLight castShadow position={[10, 10, 10]} />
                         <Homepage />
-                        <Html fullscreen className='writing'>
+                        <Html fullscreen>
                             <Border />
                         </Html>
-                    </View>
-                    
-                    <Controls />
+                    </View> */}
+                </Canvas>
+            </div>
+
+            <div className='container_2'>
+                {/* ----- Scene 3 ----- */}
+                <Canvas className='canvas_2'>
+                    <color attach="background" args={['#629FF5']} />
+                    <PerspectiveCamera makeDefault position={[0, 0, 35]} fov={35} />
+                    <pointLight castShadow position={[10, 10, 10]} />
+                    <Homepage />
+                    <Html fullscreen className='inner'/>
+                    <Html fullscreen className='outer'/>
+                    <OrbitControls />
                 </Canvas>
             </div>
         </>

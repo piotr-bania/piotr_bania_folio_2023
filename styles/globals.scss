@@ -2,8 +2,8 @@
 @import url("https://use.typekit.net/wjp2kcg.css");
 
 @font-face {
-    font-family: "arkitech";
-    src: url(/public/fonts/arkitech/arkitech_light.ttf);
+    font-family: "komika";
+    src: url(../public/fonts/komika/KOMIKASK.ttf);
 }
 
 /* ------------------------------ Variables ------------------------------ */
@@ -17,9 +17,9 @@ $off_white: #F5F4FE;
 $white: #FFFFFF;
 
 // ---------- Fonts ----------
-$header_font: 'ethnocentric',
+$header_font: 'komika',
 sans-serif;
-$text_font: 'kallisto',
+$text_font: 'komika',
 sans-serif;
 
 // ---------- Fluid fonts ----------
@@ -48,4 +48,11 @@ body {
     margin: auto;
     user-select: none;
     overflow: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: $header_font;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1;
 }
