@@ -39,8 +39,6 @@ const Scene_2 = () => {
         cubeRef.current.rotation.y -= 0.003
     })
 
-    const {scene, nodes, materials} = useLoader(GLTFLoader, '/models/scene_final.glb')
-
     return (
         <mesh ref={cubeRef}>
             <boxGeometry args={[10, 10, 10]} />
