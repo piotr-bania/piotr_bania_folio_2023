@@ -10,7 +10,7 @@ import water_frag from '../../../shaders/water.frag'
 
 const Scene_1 = () => {
 
-    const cubeRef = useRef()
+    const groupRef = useRef()
 
     const waterMaterial = new ShaderMaterial({
         uniforms: {
@@ -34,18 +34,23 @@ const Scene_1 = () => {
     })
 
     useFrame((state, delta) => {
-        waterMaterial.uniforms.uTime.value += delta
-        cubeRef.current.rotation.x -= 0.001
-        cubeRef.current.rotation.y -= 0.002
+        // waterMaterial.uniforms.uTime.value += delta
+        groupRef.current.rotation.y -= 0.00025
     })
 
-    // const {scene, nodes, materials} = useLoader(GLTFLoader, '/models/scene_final.glb')
-
+    const {scene, nodes, materials} = useLoader(GLTFLoader, '/models/scene.glb')
+    console.log(nodes)
     return (
-        <mesh ref={cubeRef}>
-            <boxGeometry args={[10, 10, 10]} />
-            <meshStandardMaterial color='#3D3D3D' />
-        </mesh>
+    <group ref={groupRef} position={[0, 0, 0]}>
+        <mesh
+            geometry={nodes.terrain.geometry}
+            material={nodes.terrain.material}
+        />
+        <mesh
+            geometry={nodes.water.geometry}
+            material={nodes.water.material}
+        />
+    </group>
     )
 }
 

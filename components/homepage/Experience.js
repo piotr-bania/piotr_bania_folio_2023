@@ -8,6 +8,7 @@ import Scene_2 from './scenes/Scene_2'
 import Caption_2 from './captions/Caption_2'
 import Scene_3 from './scenes/Scene_3'
 import Caption_3 from './captions/Caption_3'
+import Controls from '../Controls'
 
 const Experience = () => {
 
@@ -16,9 +17,9 @@ const Experience = () => {
             <div className='scene_1'>
                 <Canvas className='canvas'>
                     <Suspense fallback={null}>
-                        <color attach="background" args={['#F9F9F9']} />
+                        <color attach="background" args={['#39757C']} />
                         
-                        <PerspectiveCamera makeDefault position={[0, 0, 35]} fov={35} />
+                        <PerspectiveCamera makeDefault position={[0, 10, 45]} fov={45} />
 
                         <pointLight castShadow position={[10, 10, 10]} />
 
@@ -29,7 +30,8 @@ const Experience = () => {
                         <Caption_1 />
                     </Suspense>
                     
-                    <OrbitControls enablePan={false} />
+                    {/* <OrbitControls enablePan={false} /> */}
+                    <Controls />
                 </Canvas>
             </div>
 
@@ -49,7 +51,7 @@ const Experience = () => {
                         <Caption_2 />
                     </Suspense>
 
-                    <OrbitControls enablePan={false} />
+                    <OrbitControls  />
                 </Canvas>
             </div>
 
