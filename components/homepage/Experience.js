@@ -1,6 +1,7 @@
 import React, { useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { PerspectiveCamera, Environment, View, Html, OrbitControls } from '@react-three/drei'
+import { Fog } from 'three'
 
 import Scene_1 from './scenes/Scene_1'
 import Caption_1 from './captions/Caption_1'
@@ -15,10 +16,13 @@ const Experience = () => {
     return (
         <>
             <div className='scene_1'>
-                <Canvas className='canvas'>
+                <Canvas className='canvas'
+                    onCreated={(state) => {
+                        state.gl.setClearColor('#696969')
+                        state.scene.fog = new Fog('#262837', 1, 45)
+                    }}
+                >
                     <Suspense fallback={null}>
-                        <color attach="background" args={['#39757C']} />
-                        
                         <PerspectiveCamera makeDefault position={[0, 10, 45]} fov={45} />
 
                         <pointLight castShadow position={[10, 10, 10]} />
@@ -30,8 +34,16 @@ const Experience = () => {
                         <Caption_1 />
                     </Suspense>
                     
-                    {/* <OrbitControls enablePan={false} /> */}
-                    <Controls />
+                    <OrbitControls
+                        rotateSpeed={0.25}
+                        enablePan={false}
+                        minPolarAngle={Math.PI / 20}
+                        maxPolarAngle={Math.PI / 2.25}
+                        minDistance={5}
+                        maxDistance={20}
+                        enableDamping={true}
+                        dampingFactor={0.1}
+                    />
                 </Canvas>
             </div>
 

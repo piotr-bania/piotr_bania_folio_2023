@@ -101,7 +101,7 @@ void main() {
         elevation -= abs(cnoise(vec3(modelPosition.xz * 0.35 * i, uTime * 0.25)) * 0.35 / i);
     }
 
-    modelPosition.y += elevation;
+    modelPosition.y += elevation * 0.01;
 
     vec4 viewPosition = viewMatrix * modelPosition;
     vec4 projectedPosition = projectionMatrix * viewPosition;
