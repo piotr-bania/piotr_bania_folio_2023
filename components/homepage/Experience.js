@@ -18,8 +18,8 @@ const Experience = () => {
             <div className='scene_1'>
                 <Canvas className='canvas'
                     onCreated={(state) => {
-                        state.gl.setClearColor('#696969')
-                        state.scene.fog = new Fog('#262837', 1, 45)
+                        state.gl.setClearColor('#ABABAB')
+                        state.scene.fog = new Fog('#000000', 1, 55)
                     }}
                 >
                     <Suspense fallback={null}>
@@ -38,7 +38,7 @@ const Experience = () => {
                         rotateSpeed={0.25}
                         enablePan={false}
                         minPolarAngle={Math.PI / 20}
-                        maxPolarAngle={Math.PI / 2.25}
+                        maxPolarAngle={Math.PI / 2.35}
                         minDistance={5}
                         maxDistance={20}
                         enableDamping={true}
@@ -48,9 +48,13 @@ const Experience = () => {
             </div>
 
             <div className='scene_2'>
-                <Canvas className='canvas'>
+                <Canvas className='canvas'
+                    onCreated={(state) => {
+                        state.gl.setClearColor('#ABABAB')
+                        state.scene.fog = new Fog('#000000', 1, 55)
+                    }}
+                >
                     <Suspense fallback={null}>
-                        <color attach="background" args={['#F3F3F3']} />
                         
                         <PerspectiveCamera makeDefault position={[0, 0, 45]} fov={45} />
 
@@ -63,14 +67,27 @@ const Experience = () => {
                         <Caption_2 />
                     </Suspense>
 
-                    <OrbitControls  />
+                    <OrbitControls
+                        rotateSpeed={0.25}
+                        enablePan={false}
+                        minPolarAngle={Math.PI / 20}
+                        maxPolarAngle={Math.PI / 2.35}
+                        minDistance={5}
+                        maxDistance={20}
+                        enableDamping={true}
+                        dampingFactor={0.1}
+                    />
                 </Canvas>
             </div>
 
             <div className='scene_3'>
-                <Canvas className='canvas'>
+                <Canvas className='canvas'
+                    onCreated={(state) => {
+                        state.gl.setClearColor('#ABABAB')
+                        state.scene.fog = new Fog('#000000', 1, 55)
+                    }}
+                >
                     <Suspense fallback={null}>
-                        <color attach="background" args={['#EDEDED']} />
                         
                         <PerspectiveCamera makeDefault position={[0, 0, 55]} fov={55} />
 
@@ -83,7 +100,16 @@ const Experience = () => {
                         <Caption_3 />
                     </Suspense>
 
-                    <OrbitControls enablePan={false} />
+                    <OrbitControls
+                        rotateSpeed={0.25}
+                        enablePan={false}
+                        minPolarAngle={Math.PI / 20}
+                        maxPolarAngle={Math.PI / 2.35}
+                        minDistance={5}
+                        maxDistance={20}
+                        enableDamping={true}
+                        dampingFactor={0.1}
+                    />
                 </Canvas>
             </div>
         </>

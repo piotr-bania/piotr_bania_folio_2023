@@ -10,22 +10,22 @@ import water_frag from '../../../shaders/water.frag'
 
 const Scene_2 = () => {
 
-    const cubeRef = useRef()
+    const groupRef = useRef()
 
     const waterMaterial = new ShaderMaterial({
         uniforms: {
             uTime: { value: 0 },
 
-            uBigWaveElevation: { value: 0.25 },
+            uBigWaveElevation: { value: 0.15 },
             uBigWaveFrequency: { value: new THREE.Vector2(0.5, 0.75) },
             uBigWaveSpeed: { value: 0.5 },
 
-            uDepthColor: { value: new THREE.Color('#289BA5') },
-            uSurfaceColor: { value: new THREE.Color('#67F0F6') },
-            uColorOffset: { value: 0.08 },
+            uDepthColor: { value: new THREE.Color('#ffffff') },
+            uSurfaceColor: { value: new THREE.Color('#000000') },
+            uColorOffset: { value: 0.8 },
             uColorMultiplier: { value: 5.0 },
 
-            uTransparency: { value: 0.75 },
+            uTransparency: { value: 0.5 },
         },
         vertexShader: water_vert,
         fragmentShader: water_frag,
@@ -35,15 +35,30 @@ const Scene_2 = () => {
 
     useFrame((state, delta) => {
         waterMaterial.uniforms.uTime.value += delta
-        cubeRef.current.rotation.x -= 0.002
-        cubeRef.current.rotation.y -= 0.003
+        // groupRef.current.rotation.y -= 0.00025
     })
 
+    const {scene, nodes, materials} = useLoader(GLTFLoader, '/models/scene.glb')
+
     return (
-        <mesh ref={cubeRef}>
-            <boxGeometry args={[10, 10, 10]} />
-            <meshStandardMaterial color='#555555' />
-        </mesh>
+        <group ref={groupRef} position={[0, 0, 0]}>
+            <mesh
+                geometry={nodes.terrain_1.geometry}
+                material={nodes.terrain_1.material}
+            >
+                <meshToonMaterial />
+            </mesh>
+
+            <mesh
+                geometry={nodes.terrain_2.geometry}
+                material={nodes.terrain_2.material}
+            >
+            </mesh>
+
+            <mesh geometry={nodes.water.geometry} >
+                <shaderMaterial args={[waterMaterial]} />
+            </mesh>
+        </group>
     )
 }
 

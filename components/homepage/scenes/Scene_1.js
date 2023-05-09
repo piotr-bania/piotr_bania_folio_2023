@@ -20,8 +20,8 @@ const Scene_1 = () => {
             uBigWaveFrequency: { value: new THREE.Vector2(0.5, 0.75) },
             uBigWaveSpeed: { value: 0.5 },
 
-            uDepthColor: { value: new THREE.Color('#27F4EE') },
-            uSurfaceColor: { value: new THREE.Color('#238899') },
+            uDepthColor: { value: new THREE.Color('#ffffff') },
+            uSurfaceColor: { value: new THREE.Color('#000000') },
             uColorOffset: { value: 0.8 },
             uColorMultiplier: { value: 5.0 },
 
@@ -38,22 +38,27 @@ const Scene_1 = () => {
         groupRef.current.rotation.y -= 0.00025
     })
 
-    const {scene, nodes, materials} = useLoader(GLTFLoader, '/models/scene.glb')
-    console.log(nodes)
+    const {nodes} = useLoader(GLTFLoader, '/models/scene.glb')
+
     return (
-    <group ref={groupRef} position={[0, 0, 0]}>
-        <mesh
-            geometry={nodes.terrain.geometry}
-            // material={nodes.terrain.material}
-        >
-            <meshToonMaterial />
-        </mesh>
-        <mesh
-            geometry={nodes.water.geometry}
-        >
-            <shaderMaterial args={[waterMaterial]} />
-        </mesh>
-    </group>
+        <group ref={groupRef} position={[0, 0, 0]}>
+            <mesh
+                geometry={nodes.terrain_1.geometry}
+                material={nodes.terrain_1.material}
+            >
+                <meshToonMaterial />
+            </mesh>
+
+            <mesh
+                geometry={nodes.terrain_2.geometry}
+                material={nodes.terrain_2.material}
+            >
+            </mesh>
+
+            <mesh geometry={nodes.water.geometry} >
+                <shaderMaterial args={[waterMaterial]} />
+            </mesh>
+        </group>
     )
 }
 
