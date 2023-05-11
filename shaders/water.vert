@@ -98,10 +98,10 @@ void main() {
                     sin(modelPosition.z * uBigWaveFrequency.y + uTime * uBigWaveSpeed) * uBigWaveElevation;
 
     for(float i = 1.0; i <= 4.0; i++) {
-        elevation -= abs(cnoise(vec3(modelPosition.xz * 0.35 * i, uTime * 0.25)) * 0.35 / i);
+        elevation -= abs(cnoise(vec3(modelPosition.xz * 0.9 * i, uTime * 0.25)) * 0.35 / i);
     }
 
-    modelPosition.y += elevation * 0.01;
+    modelPosition.y += elevation * 0.1;
 
     vec4 viewPosition = viewMatrix * modelPosition;
     vec4 projectedPosition = projectionMatrix * viewPosition;

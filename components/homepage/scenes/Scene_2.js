@@ -16,16 +16,16 @@ const Scene_2 = () => {
         uniforms: {
             uTime: { value: 0 },
 
-            uBigWaveElevation: { value: 0.15 },
+            uBigWaveElevation: { value: 0.25 },
             uBigWaveFrequency: { value: new THREE.Vector2(0.5, 0.75) },
             uBigWaveSpeed: { value: 0.5 },
 
-            uDepthColor: { value: new THREE.Color('#ffffff') },
-            uSurfaceColor: { value: new THREE.Color('#000000') },
+            uDepthColor: { value: new THREE.Color('#FFFFFF') },
+            uSurfaceColor: { value: new THREE.Color('#7161F5') },
             uColorOffset: { value: 0.8 },
             uColorMultiplier: { value: 5.0 },
 
-            uTransparency: { value: 0.5 },
+            uTransparency: { value: 0.75 },
         },
         vertexShader: water_vert,
         fragmentShader: water_frag,
@@ -38,21 +38,34 @@ const Scene_2 = () => {
         // groupRef.current.rotation.y -= 0.00025
     })
 
-    const {scene, nodes, materials} = useLoader(GLTFLoader, '/models/scene.glb')
+    const {nodes} = useLoader(GLTFLoader, '/models/scene.glb')
 
     return (
-        <group ref={groupRef} position={[0, 0, 0]}>
-            <mesh
+        <group ref={groupRef} position={[0, 0, 0]} rotation={[0, 0, 0]}>
+            <mesh receiveShadow
                 geometry={nodes.terrain_1.geometry}
-                material={nodes.terrain_1.material}
-            >
+                // material={nodes.terrain_1.material}
+                >
+                {/* <meshToonMaterial color={'#978472'} /> */}
                 <meshToonMaterial />
             </mesh>
 
             <mesh
                 geometry={nodes.terrain_2.geometry}
-                material={nodes.terrain_2.material}
-            >
+                >
+                <meshToonMaterial color={'#000000'}/>
+            </mesh>
+
+            <mesh castShadow
+                geometry={nodes.protagonist_2_1.geometry}
+                >
+                <meshToonMaterial color={'#ff0000'}/>
+            </mesh>
+
+            <mesh
+                geometry={nodes.protagonist_2_2.geometry}
+                >
+                <meshToonMaterial color={'#000000'}/>
             </mesh>
 
             <mesh geometry={nodes.water.geometry} >
