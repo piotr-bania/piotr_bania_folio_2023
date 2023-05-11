@@ -17,8 +17,8 @@ const Experience = () => {
             <div className='scene_1'>
                 <Canvas className='canvas' shadows
                     onCreated={(state) => {
-                        state.gl.setClearColor('#A2A0B5')
-                        state.scene.fog = new Fog('#07032E', 1, 55)
+                        state.gl.setClearColor('#9A96C0')
+                        state.scene.fog = new Fog('#0B0445', 1, 55)
                     }}
                 >
                     <Suspense fallback={null}>
@@ -61,8 +61,8 @@ const Experience = () => {
             <div className='scene_2'>
                 <Canvas className='canvas' shadows
                     onCreated={(state) => {
-                        state.gl.setClearColor('#A2A0B5')
-                        state.scene.fog = new Fog('#07032E', 1, 55)
+                        state.gl.setClearColor('#9A96C0')
+                        state.scene.fog = new Fog('#0B0445', 1, 55)
                     }}
                 >
                     <Suspense fallback={null}>
@@ -105,8 +105,8 @@ const Experience = () => {
             <div className='scene_3'>
                 <Canvas className='canvas' shadows
                     onCreated={(state) => {
-                        state.gl.setClearColor('#A2A0B5')
-                        state.scene.fog = new Fog('#07032E', 1, 55)
+                        state.gl.setClearColor('#9A96C0')
+                        state.scene.fog = new Fog('#0B0445', 1, 55)
                     }}
                 >
                     <Suspense fallback={null}>
