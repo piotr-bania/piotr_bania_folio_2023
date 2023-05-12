@@ -20,8 +20,8 @@ const Scene_1 = () => {
             uBigWaveFrequency: { value: new THREE.Vector2(0.5, 0.75) },
             uBigWaveSpeed: { value: 0.5 },
 
-            uDepthColor: { value: new THREE.Color('#27F1E8') },
-            uSurfaceColor: { value: new THREE.Color('#2598A9') },
+            uDepthColor: { value: new THREE.Color('#FFFFFF') },
+            uSurfaceColor: { value: new THREE.Color('#7161F5') },
             uColorOffset: { value: 0.8 },
             uColorMultiplier: { value: 5.0 },
 
@@ -48,8 +48,8 @@ const Scene_1 = () => {
             <mesh receiveShadow
                 geometry={terrain.terrain_1.geometry}
                 >
-                <meshToonMaterial color={'#958A77'} />
-                {/* <meshToonMaterial /> */}
+                {/* <meshToonMaterial color={'#958A77'} /> */}
+                <meshToonMaterial />
             </mesh>
 
             {/* --- Terrain outline --- */}
@@ -70,8 +70,7 @@ const Scene_1 = () => {
                 // material={flower.plant_1_1.material}
                 position={[0, 0.35, 0]}
                 >
-                <meshToonMaterial color={'#4A6E81'} />
-                {/* <meshToonMaterial /> */}
+                <meshToonMaterial color={'#C2BBFB'} />
             </mesh>
 
             {/* --- Flower stem outline --- */}
@@ -85,8 +84,7 @@ const Scene_1 = () => {
                 // material={flower.flower_1_1.material}
                 position={[0, 0.35, 0]}
                 >
-                <meshToonMaterial color={'#C43A8B'} />
-                {/* <meshToonMaterial /> */}
+                <meshToonMaterial color={'#7161F5'} />
             </mesh>
 
             {/* --- Flower outline --- */}

@@ -17,8 +17,8 @@ const Experience = () => {
             <div className='scene_1'>
                 <Canvas className='canvas' shadows
                     onCreated={(state) => {
-                        state.gl.setClearColor('#42969A')
-                        state.scene.fog = new Fog('#12292C', 1, 55)
+                        state.gl.setClearColor('#9A96C0')
+                        state.scene.fog = new Fog('#0B0445', 1, 55)
                     }}
                 >
                     <Suspense fallback={null}>

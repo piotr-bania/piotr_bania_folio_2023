@@ -21,7 +21,7 @@ const Scene_2 = () => {
             uBigWaveSpeed: { value: 0.5 },
 
             uDepthColor: { value: new THREE.Color('#FFFFFF') },
-            uSurfaceColor: { value: new THREE.Color('#7161F5') },
+            uSurfaceColor: { value: new THREE.Color('#000000') },
             uColorOffset: { value: 0.8 },
             uColorMultiplier: { value: 5.0 },
 
