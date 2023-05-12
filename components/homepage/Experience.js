@@ -17,8 +17,8 @@ const Experience = () => {
             <div className='scene_1'>
                 <Canvas className='canvas' shadows
                     onCreated={(state) => {
-                        state.gl.setClearColor('#52B9BA')
-                        state.scene.fog = new Fog('#12292D', 1, 55)
+                        state.gl.setClearColor('#42969A')
+                        state.scene.fog = new Fog('#12292C', 1, 55)
                     }}
                 >
                     <Suspense fallback={null}>
@@ -29,12 +29,13 @@ const Experience = () => {
                             />
 
                         <pointLight
-                            position={[10, 10, 10]}
+                        intensity={0.5}
+                            position={[5, 15, 10]}
                             castShadow
                             shadow-mapSize={[1024, 1024]}
                             />
 
-                        <ambientLight intensity={0.5} />
+                        <ambientLight intensity={0.05} />
 
                         <Environment files='./environments/dikhololo_night_1k.hdr' />
 
@@ -105,8 +106,8 @@ const Experience = () => {
             <div className='scene_3'>
                 <Canvas className='canvas' shadows
                     onCreated={(state) => {
-                        state.gl.setClearColor('#9A96C0')
-                        state.scene.fog = new Fog('#0B0445', 1, 55)
+                        state.gl.setClearColor('#0E065C')
+                        state.scene.fog = new Fog('#0E065C', 1, 55)
                     }}
                 >
                     <Suspense fallback={null}>
