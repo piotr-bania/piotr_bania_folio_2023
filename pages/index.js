@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import { motion as m } from 'framer-motion'
 import Experience from '../components/homepage/Experience'
+import Prologue from '../components/homepage/prologue/Prologue'
 
 export default function Home() {
 
@@ -20,7 +21,8 @@ export default function Home() {
             </Head>
 
             <main>
-                <Experience />
+                <Prologue />
+                {/* <Experience /> */}
             </main>
         </m.div>
     )
