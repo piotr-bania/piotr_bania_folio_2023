@@ -4,7 +4,7 @@ import { Text, Html, PivotControls, TransformControls, OrbitControls } from '@re
 const Caption_1 = () => {
     return (
         <Html fullscreen>
-            <h3 className='caption caption_2'>Here stands the Cosmic Creator, ready to embark on their next journey.</h3>
+            <h3 className='caption caption_2'>Event Horizon.</h3>
         </Html>
     )
 }

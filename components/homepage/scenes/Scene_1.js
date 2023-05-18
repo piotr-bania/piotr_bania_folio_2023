@@ -3,7 +3,7 @@ import { useTexture, useGLTF, Html } from '@react-three/drei'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { useLoader, useFrame, extend } from '@react-three/fiber'
 import * as THREE from 'three'
-import { ShaderMaterial } from 'three'
+import { ShaderMaterial, TextureLoader } from 'three'
 
 import water_vert from '../../../shaders/water.vert'
 import water_frag from '../../../shaders/water.frag'
@@ -38,58 +38,27 @@ const Scene_1 = () => {
         groupRef.current.rotation.y -= 0.00025
     })
 
-    const {nodes: terrain} = useLoader(GLTFLoader, '/models/scene.glb')
-    const {nodes: flower} = useLoader(GLTFLoader, '/models/flower.glb')
-
+    const {nodes} = useLoader(GLTFLoader, '/models/untitled.glb')
+    console.log(nodes)
     return (
-        <group ref={groupRef} position={[0, 0, 0]} rotation={[-0.1, 0, 0]} >
+        <group ref={groupRef} scale={3} >
 
-            {/* --- Terrain mesh --- */}
-            <mesh receiveShadow
-                geometry={terrain.terrain_1.geometry}
-                >
-                {/* <meshToonMaterial color={'#958A77'} /> */}
-                <meshToonMaterial />
-            </mesh>
-
-            {/* --- Terrain outline --- */}
             <mesh
-                geometry={terrain.terrain_2.geometry}
+                castShadow
+                geometry={nodes.Suzanne_1.geometry}
+                >
+                <meshToonMaterial color={'#ffff00'} />
+            </mesh>
+            <mesh
+                castShadow
+                geometry={nodes.Suzanne_2.geometry}
                 >
                 <meshToonMaterial color={'#000000'} />
             </mesh>
 
-            {/* --- Water mesh --- */}
-            <mesh geometry={terrain.water.geometry} >
-                <shaderMaterial args={[waterMaterial]} />
-            </mesh>
-
-            {/* --- Flower stem mesh --- */}
-            <mesh castShadow
-                geometry={flower.plant_1_1.geometry}
-                // material={flower.plant_1_1.material}
-                position={[0, 0.35, 0]}
-                >
-                <meshToonMaterial color={'#C2BBFB'} />
-            </mesh>
-
-            {/* --- Flower stem outline --- */}
-            <mesh geometry={flower.plant_1_2.geometry} position={[0, 0.35, 0]} >
-                <meshToonMaterial color={'#000000'} />
-            </mesh>
-
-            {/* --- Flower mesh --- */}
-            <mesh castShadow
-                geometry={flower.flower_1_1.geometry}
-                // material={flower.flower_1_1.material}
-                position={[0, 0.35, 0]}
-                >
-                <meshToonMaterial color={'#7161F5'} />
-            </mesh>
-
-            {/* --- Flower outline --- */}
-            <mesh geometry={flower.flower_1_2.geometry} position={[0, 0.35, 0]} >
-                <meshToonMaterial color={'#000000'} />
+            <mesh receiveShadow position={[0, -1, 0]} rotation={[-Math.PI / 2, 0, 0]} >
+                <planeGeometry args={[15, 15, 1, 1]} />
+                <meshStandardMaterial />
             </mesh>
         </group>
     )
