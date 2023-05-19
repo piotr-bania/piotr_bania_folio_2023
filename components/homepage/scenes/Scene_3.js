@@ -38,61 +38,20 @@ const Scene_3 = () => {
         // groupRef.current.rotation.y -= 0.00025
     })
 
-    const {nodes: terrain} = useLoader(GLTFLoader, '/models/scene.glb')
-    const {nodes: flower} = useLoader(GLTFLoader, '/models/flower.glb')
+    const {nodes: terrain} = useLoader(GLTFLoader, '/models/scene_1.glb')
 
     return (
-        <group ref={groupRef} position={[0, 2, 15]} rotation={[0, 0, 0]} >
-
-            {/* --- Terrain mesh --- */}
+        <>
             <mesh receiveShadow
-                geometry={terrain.terrain_1.geometry}
-                material={terrain.terrain_1.material}
-                >
-                {/* <meshToonMaterial /> */}
+                geometry={terrain.terrain.geometry}
+                material={terrain.terrain.material}>
             </mesh>
 
-            {/* --- Terrain outline --- */}
             <mesh
-                geometry={terrain.terrain_2.geometry}
-                >
-                <meshToonMaterial color={'#000000'} />
-            </mesh>
-
-            {/* --- Water mesh --- */}
-            <mesh geometry={terrain.water.geometry} >
+                geometry={terrain.water.geometry}>
                 <shaderMaterial args={[waterMaterial]} />
             </mesh>
-
-            {/* --- Flower stem mesh --- */}
-            <mesh castShadow
-                geometry={flower.plant_1_1.geometry}
-                material={flower.plant_1_1.material}
-                position={[0, 0.35, 0]}
-                >
-                {/* <meshToonMaterial /> */}
-            </mesh>
-
-            {/* --- Flower stem outline --- */}
-            <mesh geometry={flower.plant_1_2.geometry} position={[0, 0.35, 0]} >
-                <meshToonMaterial color={'#000000'} />
-            </mesh>
-
-            {/* --- Flower mesh --- */}
-            <mesh castShadow
-                geometry={flower.flower_1_1.geometry}
-                material={flower.flower_1_1.material}
-                position={[0, 0.35, 0]}
-                >
-                {/* <meshToonMaterial /> */}
-            </mesh>
-
-            {/* --- Flower outline --- */}
-            <mesh geometry={flower.flower_1_2.geometry} position={[0, 0.35, 0]} >
-                <meshToonMaterial color={'#000000'} />
-            </mesh>
-
-        </group>
+        </>
     )
 }
 
