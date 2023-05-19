@@ -48,6 +48,7 @@ const Scene_2 = () => {
             </mesh>
 
             <mesh
+                receiveShadow
                 geometry={terrain.water.geometry}>
                 <shaderMaterial args={[waterMaterial]} />
             </mesh>

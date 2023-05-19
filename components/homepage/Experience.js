@@ -18,11 +18,11 @@ const AnimatedDirectionalLight = () => {
     
     useFrame(({ clock }) => {
         if (lightRef.current) {
-            const radius = 20
-            const angle = clock.getElapsedTime() * 0.01
+            const radius = 50
+            const angle = clock.getElapsedTime() * 0.1
             lightRef.current.position.set(
             radius * Math.sin(angle),
-            10,
+            15,
             radius * Math.cos(angle)
             )
         }
@@ -30,9 +30,9 @@ const AnimatedDirectionalLight = () => {
     
     return (
         <directionalLight
-            position={[5, 5, 55]}
+            position={[25, 25, 45]}
             ref={lightRef}
-            color={'#FDEECD'}
+            color={'#7161F5'}
             intensity={1}
             castShadow
             shadow-mapSize-width={1024}
@@ -69,7 +69,7 @@ const Experience = () => {
                     >
                     <Canvas className='canvas' shadows
                         onCreated={(state) => {
-                            state.gl.setClearColor('#9A96C0')
+                            state.gl.setClearColor('#07032E')
                             state.scene.fog = new Fog('#0B0445', 1, 45)
                         }}
                         >
@@ -81,9 +81,9 @@ const Experience = () => {
                                 fov={21}
                                 />
 
-                            <AnimatedDirectionalLight />
-                            <ambientLight intensity={0.05} />
-                            <Environment files='./environments/dikhololo_night_1k.hdr' />
+                            <AnimatedDirectionalLight castShadow />
+                            {/* <ambientLight intensity={0.05} />
+                            <Environment files='./environments/dikhololo_night_1k.hdr' /> */}
                             <Scene_1 />
                             <Caption_1 />
                         </Suspense>
@@ -96,7 +96,7 @@ const Experience = () => {
                     >
                     <Canvas className='canvas' shadows
                         onCreated={(state) => {
-                            state.gl.setClearColor('#9A96C0')
+                            state.gl.setClearColor('#07032E')
                             state.scene.fog = new Fog('#0B0445', 1, 45)
                         }}
                         >
@@ -108,13 +108,9 @@ const Experience = () => {
                                 fov={21}
                                 />
 
-                                <pointLight
-                                    position={[10, 10, 10]}
-                                    castShadow
-                                    shadow-mapSize={[1024, 1024]}
-                                    />
-                                <ambientLight intensity={0.025} />
-                                <Environment files='./environments/dikhololo_night_1k.hdr' />
+                            <AnimatedDirectionalLight castShadow />
+                            {/* <ambientLight intensity={0.05} />
+                            <Environment files='./environments/dikhololo_night_1k.hdr' /> */}
 
                             <Scene_2 />
                             <Caption_2 />
@@ -128,7 +124,7 @@ const Experience = () => {
                     >
                     <Canvas className='canvas' shadows
                         onCreated={(state) => {
-                            state.gl.setClearColor('#9A96C0')
+                            state.gl.setClearColor('#07032E')
                             state.scene.fog = new Fog('#0B0445', 1, 45)
                         }}
                         >
@@ -140,13 +136,9 @@ const Experience = () => {
                                 fov={21}
                                 />
 
-                            <pointLight
-                                position={[10, 10, 10]}
-                                castShadow
-                                shadow-mapSize={[1024, 1024]}
-                                />
-                            <ambientLight intensity={0.025} />
-                            <Environment files='./environments/dikhololo_night_1k.hdr' />
+                            <AnimatedDirectionalLight castShadow />
+                            {/* <ambientLight intensity={0.05} />
+                            <Environment files='./environments/dikhololo_night_1k.hdr' /> */}
 
                             <Scene_3 />
                             <Caption_3 />
