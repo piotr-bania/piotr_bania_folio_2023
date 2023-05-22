@@ -6,21 +6,21 @@ const Prologue = () => {
         <AnimatePresence>
             <m.section
                 id="opening"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1, transition: { duration: 1 } }}
-                exit={{ opacity: 0, transition: { duration: 1 } }}
+                initial={{opacity: 0}}
+                animate={{opacity: 1, transition: {delay: 1, duration: 2, ease: 'easeInOut'}}}
+                exit={{opacity: 0, transition: {duration: 1}}}
                 >
                 <m.h1
                     className="header text"
                     initial={{opacity: 0}}
-                    animate={{ opacity: 1, transition: {delay: 1, duration: 2, ease: 'easeInOut'}}}
-                    >Unveiling the Enigma
+                    animate={{opacity: 1, transition: {delay: 4, duration: 2, ease: 'easeInOut'}}}
+                    >Genesis Code
                 </m.h1>
 
                 <m.p
                     className="text"
                     initial={{opacity: 0}}
-                    animate={{ opacity: 1, transition: {delay: 2, duration: 2, ease: 'easeInOut'} }}
+                    animate={{opacity: 1, transition: {delay: 6, duration: 2, ease: 'easeInOut'}}}
                     >
                     (Homepage)
                 </m.p>

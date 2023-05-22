@@ -3,9 +3,7 @@ import { Text, Html, PivotControls, TransformControls, OrbitControls } from '@re
 
 const Caption_1 = () => {
     return (
-        <Html fullscreen>
-            <h2 className='caption caption_1'>Genesis of the Unknown.</h2>
-        </Html>
+        <h2 className='caption caption_1'>In the infinite expanse of the cosmos, a spacecraft blazes a trail through the stars, carrying within it an explorer with an insatiable curiosity and a thirst for creation.</h2>
     )
 }
 

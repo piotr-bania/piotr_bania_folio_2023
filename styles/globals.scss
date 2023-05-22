@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: "komika";
-    src: url(../public/fonts/komika/KOMIKASK.ttf);
+    src: url(../public/fonts/komika_axis/KOMIKAX_.ttf);
 }
 
 /* ------------------------------ Variables ------------------------------ */
@@ -41,7 +41,7 @@ html {
 }
 
 body {
-    background: linear-gradient(90deg, $darker, $dark);
+    background: $dark;
     color: $off_white;
     font-family: $text_font;
     font-size: $paragraph;
@@ -85,37 +85,19 @@ p {
     color: $dark;
 }
 
-// ------------------- Canvas -------------------
-.canvas {
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    border: 12px solid $dark;
-}
-
 // ------------------- Scenes -------------------
 .scene_1,
 .scene_2,
 .scene_3 {
-    position: fixed;
+    position: absolute;
 }
 
-// ------------------- Frames -------------------
-.inner {
-    border: 12px solid $white;
-
-    &::after {
-        content: '';
-        border: 1px solid $dark;
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
-}
-
-.outer {
-    border: 1px solid $dark;
+// ------------------- Canvas -------------------
+.canvas {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: $dark;
 }
 
 // ------------------- Captions -------------------
@@ -123,17 +105,10 @@ p {
     position: relative;
     height: auto;
     padding: 10px 20px;
-    text-align: center;
+    font-size: 18px;
     background: $white;
     color: $dark;
-    border: 1px solid $dark;
-    // box-shadow: 0 0 25px #00000050;
-}
-
-.caption_1,
-.caption_2,
-.caption_3 {
-    position: absolute;
+    border: 2px solid $dark;
 }
 
 // section {
@@ -154,14 +129,16 @@ p {
     justify-content: center;
     align-content: center;
     text-align: center;
-    background: $white;
+    background: $dark;
 
     .logo {
         width: 100%;
+        margin-top: 10px;
     }
 
     .header {
         font-size: 500%;
+        padding-bottom: 10px;
     }
 
     .subheader {
@@ -169,6 +146,7 @@ p {
     }
 
     .text {
-        color: $dark;
+        color: $off_white;
+        margin-bottom: 5px;
     }
 }

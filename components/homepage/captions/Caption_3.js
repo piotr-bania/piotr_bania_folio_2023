@@ -3,9 +3,7 @@ import { Text, Html, PivotControls, TransformControls, OrbitControls } from '@re
 
 const Caption_1 = () => {
     return (
-        <Html fullscreen>
-            <h4 className='caption caption_3'>The Silent Oath.</h4>
-        </Html>
+        <h4 className='caption caption_3'>As the Cosmic Coder embarks on the exploration of this unique terrain, they uncover the secrets of the alien planet.</h4>
     )
 }
 

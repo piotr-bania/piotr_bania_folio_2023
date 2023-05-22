@@ -3,9 +3,7 @@ import { Text, Html, PivotControls, TransformControls, OrbitControls } from '@re
 
 const Caption_1 = () => {
     return (
-        <Html fullscreen>
-            <h3 className='caption caption_2'>Event Horizon.</h3>
-        </Html>
+        <h3 className='caption caption_2'>With a crash, the ship lands in a vibrant low-poly world, untouched by any other.</h3>
     )
 }
 

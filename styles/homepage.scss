@@ -1,59 +1,52 @@
 @import '/styles/globals';
 
-// ------------------- Captions -------------------
-.caption_1 {
-    top: 10px;
-    left: 7%;
-    border-top: none;
-}
-
-.caption_2 {
-    bottom: 9px;
-    right: 9px;
-    border-bottom: none;
-    border-right: none;
-}
-
-.caption_3 {
-    top: 10px;
-    right: 8px;
-    border-top: none;
-    border-right: none;
-}
-
 // ------------------- Desktop -------------------
 @media only screen and (min-width: 1200px) {
     .scene_1 {
-        top: 0%;
-        left: 0%;
-        width: 100%;
+        top: 0;
+        left: 0;
+        width: 70%;
         height: 100%;
-    }
+        border: 30px solid $dark;
 
-    .caption_1 {
-        width: 25%;
+        .caption_1 {
+            position: absolute;
+            width: 60%;
+            top: -10px;
+            left: 70px;
+        }
     }
 
     .scene_2 {
-        top: 5%;
-        right: 2%;
+        top: 0;
+        right: 0;
         width: 35%;
-        height: 55%;
-    }
+        height: calc(65% + 20px);
+        border: 20px solid $dark;
 
-    .caption_2 {
-        width: 90%;
+        .caption_2 {
+            position: absolute;
+            width: 92%;
+            top: -10px;
+            right: -10px;
+            text-align: right;
+        }
     }
 
     .scene_3 {
-        bottom: 3%;
-        right: 5%;
+        bottom: 0;
+        right: 60px;
         width: 50%;
         height: 35%;
+        border: 20px solid $dark;
     }
 
     .caption_3 {
-        width: 60%;
+        position: absolute;
+        width: 90%;
+        bottom: -10px;
+        right: 5%;
+        text-align: center;
     }
 }
 
@@ -86,7 +79,8 @@
         bottom: 0%;
         right: 0%;
         width: 40%;
-        height: calc(45% + 11px);;
+        height: calc(45% + 11px);
+        ;
     }
 
     .caption_3 {

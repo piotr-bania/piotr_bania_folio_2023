@@ -42,10 +42,9 @@ export default function Home() {
             </Head>
 
             <main>
-                {/* <Opening />
+                <Opening />
                 {showPrologue && <Prologue />}
-                {showExperience && <Experience />} */}
-                <Experience />
+                {showExperience && <Experience />}
             </main>
         </m.div>
     )
