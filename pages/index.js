@@ -45,6 +45,7 @@ export default function Home() {
                 <Opening />
                 {showPrologue && <Prologue />}
                 {showExperience && <Experience />}
+                {/* <Experience /> */}
             </main>
         </m.div>
     )

@@ -50,9 +50,9 @@ const AnimatedDirectionalLight = () => {
 const Experience = () => {
 
     // const { positionX } = useControls({ positionX: 0 })
-    // const { positionY } = useControls({ positionY: 0 })
-    // const { positionZ } = useControls({ positionZ: 25 })
-    // const { rotationX } = useControls({ rotationX: 0 })
+    // const { positionY } = useControls({ positionY: 5 })
+    // const { positionZ } = useControls({ positionZ: -2 })
+    // const { rotationX } = useControls({ rotationX: -.2 })
     // const { rotationY } = useControls({ rotationY: 0 })
     // const { rotationZ } = useControls({ rotationZ: 0 })
 
@@ -66,18 +66,21 @@ const Experience = () => {
                 <Canvas className='canvas' shadows
                     onCreated={(state) => {
                         state.gl.setClearColor('#07032E')
-                        state.scene.fog = new Fog('#0B0445', 1, 45)
+                        state.scene.fog = new Fog('#0B0445', 1, 95)
                     }}
                     >
                     <Suspense fallback={null}>
                         <PerspectiveCamera
                             makeDefault
-                            position={[-1.72, 2.49, 21]}
-                            rotation={[-0.18, -0.26, 0]}
+                            position={[35.83, 4.4, -8.5]}
+                            rotation={[0, 0.87, 0]}
                             fov={21}
                             />
 
-                        <AnimatedDirectionalLight castShadow />
+                        {/* <AnimatedDirectionalLight castShadow /> */}
+                        <directionalLight castShadow />
+                        <ambientLight />
+                        <Environment preset='sunset' />
 
                         <Scene_1 />
                     </Suspense>
@@ -93,18 +96,21 @@ const Experience = () => {
                 <Canvas className='canvas' shadows
                     onCreated={(state) => {
                         state.gl.setClearColor('#07032E')
-                        state.scene.fog = new Fog('#0B0445', 1, 45)
+                        state.scene.fog = new Fog('#0B0445', 1, 95)
                     }}
                     >
                     <Suspense fallback={null}>
                         <PerspectiveCamera
                             makeDefault
-                            position={[-4.05, 3.5, 3.7]}
-                            rotation={[-0.22, 0.16, 0]}
+                            position={[35.83, 4.4, -8.5]}
+                            rotation={[0, 0.87, 0]}
                             fov={21}
                             />
 
-                        <AnimatedDirectionalLight castShadow />
+                        {/* <AnimatedDirectionalLight castShadow /> */}
+                        <directionalLight castShadow />
+                        <ambientLight />
+                        <Environment preset='sunset' />
 
                         <Scene_2 />
                     </Suspense>
@@ -121,7 +127,7 @@ const Experience = () => {
                 <Canvas className='canvas' shadows
                     onCreated={(state) => {
                         state.gl.setClearColor('#07032E')
-                        state.scene.fog = new Fog('#0B0445', 1, 45)
+                        state.scene.fog = new Fog('#0B0445', 1, 95)
                     }}
                     >
                     <Suspense fallback={null}>
@@ -132,21 +138,14 @@ const Experience = () => {
                             fov={21}
                             />
 
-                        <AnimatedDirectionalLight castShadow />
+                        {/* <AnimatedDirectionalLight castShadow /> */}
+                        <directionalLight castShadow />
+                        <ambientLight />
+                        <Environment preset='sunset' />
 
                         <Scene_3 />
                     </Suspense>
-
-                    <OrbitControls
-                        rotateSpeed={0.25}
-                        enablePan={false}
-                        minPolarAngle={Math.PI / 20}
-                        maxPolarAngle={Math.PI / 2.35}
-                        minDistance={5}
-                        maxDistance={20}
-                        enableDamping={true}
-                        dampingFactor={0.1}
-                    />
+                    <Controls />
                 </Canvas>
                 <Caption_3 />
             </m.div>

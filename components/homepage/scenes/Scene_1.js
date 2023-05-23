@@ -38,14 +38,12 @@ const Scene_1 = (props) => {
         // groupRef.current.rotation.y -= 0.00025
     })
 
-    const {nodes, materials, animations} = useLoader(GLTFLoader, '/models/untitled.glb')
-    const {actions} = useAnimations(animations, nodes.Suzanne)
-    
-    const {nodes: terrain} = useLoader(GLTFLoader, '/models/scene_1.glb')
+    const {nodes} = useLoader(GLTFLoader, '/models/scene_1.glb')
+    // const {actions} = useAnimations(animations, nodes.Suzanne)
 
-    useEffect(() => {
-        actions.SuzanneAction.play()
-    }, [actions])
+    // useEffect(() => {
+    //     actions.SuzanneAction.play()
+    // }, [actions])
 
     return (
         <>
@@ -58,14 +56,40 @@ const Scene_1 = (props) => {
             </mesh> */}
 
             <mesh receiveShadow
-                geometry={terrain.terrain.geometry}
-                material={terrain.terrain.material}>
+                geometry={nodes.land_1.geometry}>
+                <meshToonMaterial color={'#D56961'} />
+            </mesh>
+            <mesh receiveShadow
+                geometry={nodes.land_2.geometry}>
+                <meshStandardMaterial color={'#000000'} />
+            </mesh>
+
+            <mesh receiveShadow
+                geometry={nodes.planet_1_1.geometry}>
+                <meshToonMaterial color={'#E7B38F'} />
+            </mesh>
+            <mesh receiveShadow
+                geometry={nodes.planet_1_2.geometry}>
+                <meshStandardMaterial color={'#000000'} />
+            </mesh>
+
+            <mesh receiveShadow
+                geometry={nodes.planet_2_1.geometry}>
+                <meshToonMaterial color={'#E7B38F'} />
+            </mesh>
+            <mesh receiveShadow
+                geometry={nodes.planet_2_2.geometry}>
+                <meshStandardMaterial color={'#000000'} />
             </mesh>
 
             <mesh
                 receiveShadow
-                geometry={terrain.water.geometry}>
+                geometry={nodes.water.geometry}>
                 <shaderMaterial args={[waterMaterial]} />
+            </mesh>
+            <mesh receiveShadow
+                geometry={nodes.water.geometry}>
+                <meshStandardMaterial color={'#000000'} />
             </mesh>
         </>
     )
